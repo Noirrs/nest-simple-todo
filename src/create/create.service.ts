@@ -9,8 +9,8 @@ export class CreateService {
   constructor(@InjectModel(Note.name) private NoteModel: Model<NoteDocument>) {}
 
   async create(createDto: CreateDto): Promise<Note> {
-    const createdCat = new this.NoteModel(createDto);
-    return createdCat.save();
+    const note = new this.NoteModel(createDto);
+    return note.save();
   }
 
   async findAll(): Promise<Note[]> {
